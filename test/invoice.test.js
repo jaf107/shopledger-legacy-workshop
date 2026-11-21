@@ -28,36 +28,40 @@ test('invoice itemizes a coupon-free 18% order and splits GST', () => {
   });
 });
 
-test('CURRENT BEHAVIOUR: invoice uses 18% for rice with a 5% HSN slab', () => {
+test('invoice uses the 5% HSN slab for rice', () => {
   const invoice = computeInvoiceFigures({ items: [{ ...rice, price: 500 }] });
 
-  assert.equal(invoice.rows[0].gstPercent, 18);
-  assert.equal(invoice.tax, 90);
-  assert.equal(invoice.total, 590);
+  assert.equal(invoice.rows[0].gstPercent, 5);
+  assert.equal(invoice.tax, 25);
+  assert.equal(invoice.total, 525);
 });
 
-test('CURRENT BEHAVIOUR: SAVE10 is applied after invoice GST', () => {
+test('invoice applies the SAVE10 cap before calculating GST', () => {
   const invoice = computeInvoiceFigures({
+    items: [{ ...tea, price: 2240 }],
+    coupon: 'SAVE10'
+  });
+
+  assert.equal(invoice.discount, 150);
+  assert.equal(invoice.tax, 376.20);
+  assert.equal(invoice.total, 2466.20);
+});
+
+test('invoice matches the recorded checkout totals for a discounted 5% order', () => {
+  const order = {
     items: [{ ...rice, price: 1020 }],
     coupon: 'SAVE10',
     subtotal: 1020,
     discount: 102,
     tax: 45.90,
     total: 963.90
-  });
+  };
+  const invoice = computeInvoiceFigures(order);
 
-  assert.equal(invoice.discount, 120.36);
-  assert.equal(invoice.tax, 183.60);
-  assert.equal(invoice.total, 1083.24);
-});
-
-test('CURRENT BEHAVIOUR: invoice ignores the SAVE10 discount cap', () => {
-  const invoice = computeInvoiceFigures({
-    items: [{ ...tea, price: 2240 }],
-    coupon: 'SAVE10'
-  });
-
-  assert.equal(invoice.discount, 264.32);
-  assert.equal(invoice.tax, 403.20);
-  assert.equal(invoice.total, 2378.88);
+  assert.deepEqual(
+    { discount: invoice.discount, tax: invoice.tax, total: invoice.total },
+    { discount: order.discount, tax: order.tax, total: order.total }
+  );
+  assert.equal(invoice.rows[0].lineTax, 45.90);
+  assert.equal(invoice.cgst + invoice.sgst, invoice.tax);
 });
