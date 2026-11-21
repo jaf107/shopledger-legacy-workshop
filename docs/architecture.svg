@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
 <title id="title">ShopLedger architecture and checkout</title>
 <desc id="desc">Browser, Express server, four routers, ten library modules, configuration, JSON storage, and the six steps of checkout.</desc>
-<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#25645e"/></marker></defs>
+<defs><marker id="arrow" markerUnits="userSpaceOnUse" markerWidth="7" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L7 4L0 8Z" fill="#25645e"/></marker></defs>
 <rect width="1200" height="780" fill="#f3f7f6"/>
 <g font-family="system-ui, sans-serif" fill="#17312f">
 <text x="38" y="54" font-size="33" font-weight="720">ShopLedger architecture</text>
@@ -14,51 +14,52 @@
 <rect x="675" y="82" width="487" height="70" rx="12" fill="white" stroke="#a6c3bd"/>
 <text x="692" y="110" font-size="17" font-weight="650">Configuration</text>
 <text x="692" y="135" font-size="14" font-weight="400">config.js · shop, GST, coupons, inventory</text>
-<path d="M275 117 H307" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
-<path d="M614 117 H670" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
-<text x="38" y="192" font-size="19" font-weight="650">API routers</text>
+<path d="M275 117 H312" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M614 117 H675" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="38" y="199" font-size="19" font-weight="650">API routers</text>
 <rect x="38" y="220" width="269" height="71" rx="12" fill="white" stroke="#a6c3bd"/>
 <text x="55" y="248" font-size="17" font-weight="650">routes/products.js</text>
 <text x="55" y="273" font-size="14" font-weight="400">Catalog and coupons</text>
-<path d="M172 209 V216" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M172.5 179 V220" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="323" y="220" width="269" height="71" rx="12" fill="white" stroke="#a6c3bd"/>
 <text x="340" y="248" font-size="17" font-weight="650">routes/orders.js</text>
 <text x="340" y="273" font-size="14" font-weight="400">Checkout, history, cancellation</text>
-<path d="M457 209 V216" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M457.5 179 V220" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="608" y="220" width="269" height="71" rx="12" fill="white" stroke="#a6c3bd"/>
 <text x="625" y="248" font-size="17" font-weight="650">routes/customers.js</text>
 <text x="625" y="273" font-size="14" font-weight="400">Khata accounts and settlements</text>
-<path d="M742 209 V216" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M742.5 179 V220" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="893" y="220" width="269" height="71" rx="12" fill="white" stroke="#a6c3bd"/>
 <text x="910" y="248" font-size="17" font-weight="650">routes/reports.js</text>
 <text x="910" y="273" font-size="14" font-weight="400">Dashboard, audit, pricing preview</text>
-<path d="M1027 209 V216" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
-<path d="M463 152 V209 M172 209 H1027" fill="none" stroke="#25645e" stroke-width="2"/>
+<path d="M1027.5 179 V220" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M463 152 V179 M172.5 179 H1027.5" fill="none" stroke="#25645e" stroke-width="2"/>
 <text x="38" y="332" font-size="20" font-weight="650">Place an order · POST /api/orders</text>
 <rect x="38" y="354" width="179" height="102" rx="12" fill="white" stroke="#a6c3bd"/>
 <text x="55" y="382" font-size="17" font-weight="650">1. Read data</text>
 <text x="55" y="407" font-size="14" font-weight="400">lib/store.js</text>
-<path d="M217 404 H225" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M217 404 H227" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="227" y="354" width="179" height="102" rx="12" fill="white" stroke="#a6c3bd"/>
 <text x="244" y="382" font-size="17" font-weight="650">2. Validate cart</text>
 <text x="244" y="407" font-size="14" font-weight="400">lib/inventory.js</text>
 <text x="244" y="429" font-size="14" font-weight="400">lib/coupons.js</text>
-<path d="M406 404 H414" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M406 404 H416" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="416" y="354" width="179" height="102" rx="12" fill="white" stroke="#a6c3bd"/>
 <text x="433" y="382" font-size="17" font-weight="650">3. Compute totals</text>
 <text x="433" y="407" font-size="14" font-weight="400">lib/pricing.js</text>
 <text x="433" y="429" font-size="14" font-weight="400">lib/tax.js</text>
-<path d="M595 404 H603" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M595 404 H605" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="605" y="354" width="179" height="102" rx="12" fill="white" stroke="#a6c3bd"/>
 <text x="622" y="382" font-size="17" font-weight="650">4. Charge Khata</text>
 <text x="622" y="407" font-size="14" font-weight="400">lib/ledger.js</text>
 <text x="622" y="429" font-size="14" font-weight="400">When selected</text>
-<path d="M784 404 H792" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M784 404 H794" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="794" y="354" width="179" height="102" rx="12" fill="white" stroke="#a6c3bd"/>
-<text x="811" y="382" font-size="17" font-weight="650">5. Deduct and record</text>
+<text x="811" y="382" font-size="17" font-weight="650">5. Record sale</text>
 <text x="811" y="407" font-size="14" font-weight="400">lib/inventory.js</text>
-<text x="811" y="429" font-size="14" font-weight="400">lib/orders.js · lib/dates.js</text>
-<path d="M973 404 H981" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="811" y="429" font-size="14" font-weight="400">lib/orders.js</text>
+<text x="811" y="447" font-size="14" font-weight="400">lib/dates.js</text>
+<path d="M973 404 H983" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="983" y="354" width="179" height="102" rx="12" fill="white" stroke="#a6c3bd"/>
 <text x="1000" y="382" font-size="17" font-weight="650">6. Audit and save</text>
 <text x="1000" y="407" font-size="14" font-weight="400">lib/store.js</text>
@@ -66,7 +67,7 @@
 <rect x="38" y="495" width="1124" height="70" rx="12" fill="white" stroke="#a6c3bd"/>
 <text x="55" y="523" font-size="17" font-weight="650">Order response</text>
 <text x="55" y="548" font-size="14" font-weight="400">HTTP 201 returns the saved ledger total. The UI clears the cart and links to /orders/:id/invoice.</text>
-<path d="M1072 456 V491" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1072 456 V495" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
 <text x="38" y="610" font-size="20" font-weight="650">Printable invoice and GST reconciliation</text>
 <rect x="38" y="631" width="345" height="103" rx="12" fill="white" stroke="#a6c3bd"/>
 <text x="55" y="659" font-size="17" font-weight="650">Printable invoice</text>
@@ -80,6 +81,6 @@
 <text x="835" y="659" font-size="17" font-weight="650">GST audit</text>
 <text x="835" y="684" font-size="14" font-weight="400">lib/reports.js compares invoice figures</text>
 <text x="835" y="706" font-size="14" font-weight="400">with the checkout totals in data/db.json.</text>
-<path d="M383 684 H423" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
-<path d="M773 684 H813" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M383 684 H428" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M773 684 H818" fill="none" stroke="#25645e" stroke-width="2" marker-end="url(#arrow)"/>
 </g></svg>
